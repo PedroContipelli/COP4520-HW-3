@@ -12,7 +12,7 @@ Yes, we can help the minotaur by using a wait-free concurrent linked list implem
 Design Explanation:
 "As described in detail in Pragma 9.8.1, an AtomicMarkableReference<T> object encapsulates both a reference to an object of type T and a Boolean mark. These fields can be atomically updated, either together or individually. We make each node’s next field an AtomicMarkableReference<Node>. Thread A logically removes currA by setting the mark bit in the node’s next field, and shares the physical removal with other threads performing add() or remove(): as each thread traverses the list, it cleans up the list by physically removing (using compareAndSet()) any marked nodes it encounters. In other words, threads performing add() and remove() do not traverse marked nodes, they remove them before continuing. The contains() method remains the same as in the LazyList algorithm, traversing all nodes whether they are marked or not, and testing if an item is in the list based on its key and mark."
 
-#### Execution time for processing 500,000 presents and 'Thank You' letters: 115ms
+#### Execution time for processing 500,000 presents and 'Thank You' letters: 315ms
 
 ### Problem 2
 
