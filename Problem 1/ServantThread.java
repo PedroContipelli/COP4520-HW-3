@@ -18,6 +18,7 @@ public class ServantThread extends Thread
 	
 	public void run()
 	{
+		// LOOP until all presents have been added to the chain, and all 'Thank You' letters have been written
 		while (addPointer.get() < bag.size() || removePointer.get() < bag.size())
 		{
 			// ADD: Try to add a present to the chain
