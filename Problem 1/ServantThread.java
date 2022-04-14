@@ -43,7 +43,7 @@ public class ServantThread extends Thread
 			{
 				try
 				{
-					int numCheck = bag.get(addPointer.get() - (int)(Math.random() * 6.5 + 1));
+					int numCheck = bag.get(addPointer.get());
 					
 					if (chain.contains(numCheck))
 						System.out.println("Chain contains " + numCheck);
