@@ -30,7 +30,7 @@ public class Minotaur
 		
 		// Begin running
 		for (int i = 0; i < servants.length; i++)
-			servants[i].run();
+			servants[i].start();
 		
 		// Wait until all threads have finished execution
 		for (int i = 0; i < servants.length; i++)
