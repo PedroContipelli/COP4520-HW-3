@@ -19,5 +19,10 @@ Design Explanation:
 Compile with: **javac MarsRover.java**  
 Run with: **java MarsRover**
 
+My design implementation involved using a 60 x 8 2D array with a row for each minute in an hour, and a column for each thread. This ensures that no two threads will be tring to access the same memory location at any moment when writing their sensor readings data. After 1 hour has been simulated, the main thread generates a report based on that hour's findings and the process repeats again for the next hour. It is quite efficient since each thread only writes data to its own column, no thread ever needs to wait on another thread to finish reading/writing data, and progress can always be made every minute.
+
+#### Execution time per simulated hour: ~3 seconds realtime
+  
+  
 ### Sources:
 Maurice Herlihy and Nir Shavit. 2008. The Art of Multiprocessor Programming. Morgan Kaufmann Publishers Inc., San Francisco, CA, USA.
