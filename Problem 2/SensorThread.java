@@ -28,7 +28,7 @@ public class SensorThread extends Thread
 			int sensorReading = (int)Math.floor(Math.random() * 171 - 100);
 			readings[minute][id] = sensorReading;
 
-			// Wait until next minute, then take another reading if simulation is still ongoing
+			// Wait until next minute before taking another reading if simulation is still ongoing
 			while (minutesElapsed.get() == minute && !done.get()) {};
 		}
 	}
